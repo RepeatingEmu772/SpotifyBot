@@ -1,4 +1,8 @@
+from flask import jsonify, make_response
 import requests
+import json
+import shutil
+import os
 
 def RedirectTologin(redirect_uri="https://localhost:7001/authorized"):
     token_uri="https://accounts.spotify.com/authorize"
@@ -12,6 +16,7 @@ def RedirectTologin(redirect_uri="https://localhost:7001/authorized"):
     client_secret='265efd1824764479a4e6866d33b8b483'
     r = requests.get(token_uri,params=params)
     print(r)
+    #return make_response(r,200)
 
 if __name__=='__main__':
     RedirectTologin()
